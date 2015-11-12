@@ -30,7 +30,7 @@ object JobManager {
         println("Could not find configuration file " + configFile)
         sys.exit(1)
       }
-      ConfigFactory.parseFile(configFile).withFallback(defaultConfig)
+      ConfigFactory.parseFile(configFile).withFallback(defaultConfig).resolve()
     } else {
       defaultConfig
     }
